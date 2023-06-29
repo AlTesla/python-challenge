@@ -36,8 +36,19 @@ with open(csvpath) as csvfile_budget:
     min_change = [min_key, dict_mounth_change[min_key]]
 #open the output file  
 with open(textpath, 'w') as file:
-    #writing the outfile 
+    #writing the output file 
     file.write(
+        'Financial Analysis\n'
+        '----------------------------\n'
+        'Total Months:{}\n'
+        'Total: {}\n'
+        'Average Change:{}\n'
+        'Greatest Increase in Profits:{}({})\n'      
+        'Greatest Decrease in Profits:{}({})\n'.format(total_months, Total, mean,
+                                                   max_change[0],max_change[1],
+                                                   min_change[0],min_change[1])) 
+
+print(  '\n'
         'Financial Analysis\n'
         '----------------------------\n'
         'Total Months:{}\n'

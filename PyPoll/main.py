@@ -30,16 +30,17 @@ with open(textpath, 'w') as output_file:
     output_file.write('-------------------------\n'
                       'Winner: {}\n'
                       '-------------------------\n'.format(max_key))                  
-#print(total)   
-#print(election_dir) 
-<<<<<<< HEAD
-
-   
-
-
-print(election_dir)
-        
-=======
-#print(max_key)
-        
->>>>>>> 10d13fb44222edb6eca84de1156508c65fb13740
+    
+print(
+    '\nElection Results\n'
+    '-------------------------\n'
+    'Total Votes: {}\n'
+    '-------------------------\n'.format(total)   
+    )
+for key, value in election_dir.items():
+    percentage = (100*value/total)
+    percentage = round(percentage, 3)      
+    print("{}: {}% ({}) \n".format(key, percentage, value))
+print('-------------------------\n'
+      'Winner: {}\n'
+      '-------------------------\n'.format(max_key))   
