@@ -8,6 +8,7 @@ increase_decrease = []
 csvpath = os.path.join('Resources','budget_data.csv')
 textpath= os.path.join('analysis', 'budget_analysis.txt')
 # open csv file 
+
 with open(csvpath) as csvfile_budget:
     csvreader = csv.reader(csvfile_budget, delimiter=',')
     next(csvreader)
@@ -17,9 +18,11 @@ with open(csvpath) as csvfile_budget:
         profit_losses.append(int(row[1]))
     
     # creating new data     
-    increase_decrease = [(profit_losses[row] - profit_losses[row -1]) for row in range(1 , len(profit_losses))]
+    increase_decrease = [(profit_losses[row] - profit_losses[row -1]) 
+                          for row in range(1 , len(profit_losses))]
     mean = sum(increase_decrease)/len(increase_decrease)
-    #This script inserts a value at the first position of the ‘increase_decrease’ list to make it the same length as the ‘months’ list.
+    #This script inserts a value at the first position of the ‘increase_decrease’ 
+    #list to make it the same length as the ‘months’ list.
     increase_decrease.insert(0,0)
     #this dictionary relates the months with the increase or decrease
     dict_mounth_change = dict(zip(months, increase_decrease))
