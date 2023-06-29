@@ -32,9 +32,5 @@ with open(textpath, 'w') as output_file:
                       '-------------------------\n'.format(max_key))                  
 #print(total)   
 #print(election_dir) 
-
-   
-
-
-print(max_key)
+#print(max_key)
         
