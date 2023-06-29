@@ -30,7 +30,7 @@ with open(textpath, 'w') as output_file:
     output_file.write('-------------------------\n'
                       'Winner: {}\n'
                       '-------------------------\n'.format(max_key))                  
-    
+ # printing resoults on terminal   
 print(
     '\nElection Results\n'
     '-------------------------\n'
